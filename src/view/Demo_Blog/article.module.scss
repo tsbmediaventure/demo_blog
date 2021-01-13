@@ -42,3 +42,22 @@
   font-size: 20px;
   line-height: 24px;
 }
+@media (max-width: 768px) {
+  .main {
+    width: 90%;
+  }
+  .title {
+    font-size: 20px;
+    line-height: 27px;
+  }
+  .sub-title {
+    font-size: 16px;
+  }
+  .middle-title {
+    font-size: 18px;
+  }
+  .paragraph {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}

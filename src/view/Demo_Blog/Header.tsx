@@ -1,20 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './header.module.scss';
 import logo from '../../assets/conscentLogo.png';
 
 const Header = (props: any) => {
+  const [click, setClick] = useState(false);
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
   return (
-      <div className={style['header']} style={{backgroundColor: props.headerColor}}>
-        <div className={style['logo']}>
-          <img src={logo} alt="logo" className={style['logo-img']} />
-        </div>
-        <div className={style['menu-items-main']}>
-          <p className={style['menu-item']}>POLITICS</p>
-          <p className={style['menu-item']}>BUSINESS</p>
-          <p className={style['menu-item']}>CULTURE</p>
-          <p className={style['menu-item']}>INTERNATIONAL</p>
+    <>
+      <div className={style['header']} style={{ backgroundColor: props.headerColor }}>
+        <img src={logo} alt="logo" className={style['logo-img']} />
+        <ul className={click ? style['nav-options-active'] : style['nav-options']}>
+          <li className={style['option']} onClick={closeMobileMenu}>
+            <p>POLITICS</p>
+          </li>
+          <li className={style['option']} onClick={closeMobileMenu}>
+            <p>BUSINESS</p>
+          </li>
+          <li className={style['option']} onClick={closeMobileMenu}>
+            <p>CULTURE</p>
+          </li>
+          <li className={style['option']} onClick={closeMobileMenu}>
+            <p>INTERNATIONAL</p>
+          </li>
+        </ul>
+        <div className={style['mobile-menu']} onClick={handleClick}>
+          {click ? (
+            <div className={style['menu-icon']}>&#10005;</div>
+          ) : (
+            <div className={style['menu-icon']}>&#9776;</div>
+          )}
         </div>
       </div>
+    </>
   );
 };
 

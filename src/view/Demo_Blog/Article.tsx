@@ -2,12 +2,12 @@ import React from 'react';
 import Header from './Header';
 import style from './article.module.scss';
 import topImg from '../../assets/blog/Story/Humanoid.jpg';
-import smallImg from '../../assets/blog/Story/Roboto.png'
+import smallImg from '../../assets/blog/Story/Roboto.png';
 
 const Article = () => {
   return (
     <>
-      <Header headerColor="#fff"/>
+      <Header headerColor="#fff" />
       <div className={style['main']}>
         <p className={style['title']}>The rise of the humanoids, a new era for tech</p>
         <p className={style['sub-title']}>
@@ -22,7 +22,7 @@ const Article = () => {
             <p className={style['sub-title']}>January 01,2021</p>
           </div>
           <p className={style['middle-title']}>
-            THE <u>BIG STORY</u>
+            THE <u style={{ textUnderlinePosition: 'under' }}>BIG STORY</u>
           </p>
         </div>
         <img src={topImg} alt="topImg" className={style['large-img']} />
