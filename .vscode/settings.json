@@ -1,0 +1,30 @@
+{
+  "files.trimTrailingWhitespace": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true
+  },
+  "eslint.probe": ["javascript", "javascriptreact", "typescript", "typescriptreact", "html", "markdown", "json"],
+  "eslint.validate": ["json", "javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "todo-tree.general.tags": ["TODO", "HACK", "FIXME", "BUG", "NOTE"],
+  "todo-tree.highlights.defaultHighlight": {
+    "type": "line"
+  },
+  "todo-tree.highlights.customHighlight": {
+    "TODO": {
+      "icon": "check",
+      "foreground": "yellow"
+    },
+    "FIXME": {
+      "foreground": "red",
+      "iconColour": "red",
+      "gutterIcon": true
+    },
+    "NOTE": {
+      "foreground": "green"
+    }
+  }
+}
