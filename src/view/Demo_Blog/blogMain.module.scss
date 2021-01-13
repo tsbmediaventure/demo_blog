@@ -1,30 +1,49 @@
-.top-img{
-width: 100%;
-height: 95.05vh;
+.top-img {
+  width: 100%;
+  height: 95.05vh;
 }
-.main{
+.header-wrap{
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
     width: 100%;
-    height: 95.05vh;
+    height: 45.05vh;
     position: absolute;
 }
-.top-img-content{
-    position: absolute;
-    top: 117px;
-    left: 185px;
-    color: #FFFFFF;
+.main {
+  cursor: pointer;
 }
-.article-link{
-    font-weight: 900;
-    font-size: 30px;
+.top-img-content {
+  position: absolute;
+  top: 117px;
+  left: 185px;
+  color: #ffffff;
+  width: 650px;
 }
-.top-img-title{
-    
-    position: absolute;
-
-top: 234px;
-font-weight: 900;
-font-weight: 900;
-font-size: 60px;
-line-height: 74px;
+.article-link {
+  font-weight: 900;
+  font-size: 30px;
+}
+.top-img-title {
+  font-weight: 900;
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 74px;
+}
+.top-img-subtitle {
+  font-size: 20px;
+  line-height: 24px;
+  position: relative;
+  top: -60px;
+}
+.top-img-name {
+  font-size: 20px;
+  line-height: 23px;
+  color: #53b2c5;
+  position: relative;
+  top: -50px;
+}
+.top-img-date {
+  font-size: 20px;
+  line-height: 23px;
+  position: relative;
+  top: -50px;
 }

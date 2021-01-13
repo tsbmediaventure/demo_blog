@@ -1,0 +1,44 @@
+.main {
+  width: 75%;
+  margin: 140px auto 20px auto;
+  color: #000000;
+}
+
+.title {
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 49px;
+}
+.sub-title {
+  font-size: 20px;
+  line-height: 24px;
+}
+.name-date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.middle-title {
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 37px;
+  color: #53b2c5;
+}
+.large-img {
+  width: 100%;
+  height: 52.85vh;
+}
+.small-img {
+  float: right;
+  width: 233px;
+  height: 340px;
+}
+.source {
+  font-size: 16px;
+  line-height: 19px;
+  margin-top: 0;
+}
+.paragraph {
+  font-size: 20px;
+  line-height: 24px;
+}
