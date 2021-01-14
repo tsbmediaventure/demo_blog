@@ -1,10 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from './Header';
 import style from './article.module.scss';
 import topImg from '../../assets/blog/Story/Humanoid.jpg';
 import smallImg from '../../assets/blog/Story/Roboto.png';
 
 const Article = () => {
+  useEffect(() => {
+    // @ts-ignore
+    const csc = window._csc as any;
+    csc('init', {
+      debug: true,
+      storyId: '1',
+      subscriptionUrl: 'google.com',
+      clientId: '5fffcf4b2a2d942cb093ea18',
+      successCallback: async (payload: any) => {
+        // Function to show the premium content to the User since they have paid for it via ConsCent
+      },
+      wrappingElementId: 'csc-paywall',
+      fullScreenMode: 'false',
+    });
+  });
+
   return (
     <>
       <Header headerColor="#fff" />
