@@ -51,6 +51,20 @@ const Article = () => {
             for the human form, humanoids could theoretically perform any task a human being can, so long as they have
             the proper software. However, the complexity of doing so is immense.
           </p>
+          <p className={style['paragraph']}>
+            They are also becoming increasingly popular as entertainers. For example, Ursula, a female robot, sings,
+            plays music, dances and speaks to her audiences at Universal Studios. Several Disney theme park shows
+            utilize animatronic robots that look, move and speak much like human beings. Although these robots look
+            realistic, they have no cognition or physical autonomy. Various humanoid robots and their possible
+            applications in daily life are featured in an independent documentary film called Plug &amp; Pray, which was
+            released in 2010.
+          </p>
+          <p className={style['paragraph']}>
+            Humanoid robots, especially those with artificial intelligence algorithms, could be useful for future
+            dangerous and/or distant space exploration missions, without having the need to turn back around again and
+            return to Earth once the mission is completed.
+          </p>
+          {/* TODO: add premium content */}
           <div className={style['overlay']}>
             <div className={style['overlay-content']}>
               ist the sick and elderly, and dirty or dangerous jobs. Humanoids are also suitable for some
