@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from './Header';
 import style from './article.module.scss';
+import { Link } from 'react-router-dom';
 import topImg from '../../assets/blog/Story/Humanoid.jpg';
 import smallImg from '../../assets/blog/Story/Roboto.png';
 
@@ -83,7 +84,6 @@ const Article = () => {
             dangerous and/or distant space exploration missions, without having the need to turn back around again and
             return to Earth once the mission is completed.
           </p>
-
           {paid && (
             <>
               <p className={style['paragraph']}>
@@ -100,7 +100,9 @@ const Article = () => {
               </p>
             </>
           )}
-          {/* TODO: add premium content */}
+          <Link to="/">
+            <p onClick={() => window.scrollTo(0, 0)}>&lt;&lt; Back</p>
+          </Link>
           <div
             style={{
               display: 'flex',
