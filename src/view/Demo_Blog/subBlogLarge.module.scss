@@ -3,7 +3,8 @@
   position: relative;
   bottom: 50px;
 }
-img {
+
+.cover-img {
   width: 100%;
   display: block;
   height: 438px;
@@ -55,10 +56,10 @@ img {
   .sub-title {
     margin-top: -16px;
   }
-  .date{
+  .date {
     margin-right: 10px;
   }
-  .wrap-name-date{
+  .wrap-name-date {
     display: flex;
     justify-content: space-between;
   }
