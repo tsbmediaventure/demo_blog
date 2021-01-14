@@ -42,6 +42,38 @@
   font-size: 20px;
   line-height: 24px;
 }
+.overlay-wrap {
+  position: relative;
+}
+.overlay {
+  position: absolute;
+  top: 130px;
+  text-align: center;
+  width: 100%;
+}
+.overlay-content {
+  height: 450px;
+  box-shadow: 1px 3px 5px 0 rgba(51, 49, 49, 0.33);
+  background-color: #fff;
+  text-align: center;
+  padding: 10px 20px;
+  width: 400px;
+  margin: auto;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.flex-content {
+  box-shadow: 1px 3px 5px 0 rgba(51, 49, 49, 0.33);
+  background-color: #fff;
+  text-align: center;
+  padding: 10px 20px;
+  max-width: 95%;
+  width: 750px;
+}
 @media (max-width: 768px) {
   .main {
     width: 90%;
@@ -59,5 +91,8 @@
   .paragraph {
     font-size: 14px;
     line-height: 22px;
+  }
+  .overlay-content {
+    width: 300px;
   }
 }
