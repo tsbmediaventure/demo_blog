@@ -81,12 +81,14 @@ const Article = () => {
             return to Earth once the mission is completed.
           </p>
           {/* TODO: add premium content */}
-          <div className={style['overlay']}>
-            <div className={style['overlay-content']}>
-              ist the sick and elderly, and dirty or dangerous jobs. Humanoids are also suitable for some
-              procedurally-based vocations, such as reception-desk administrators and automotive manufacturing line
-              workers. In essence, since they
-            </div>
+          <div
+            style={{
+              display: 'flex',
+              width: '100%',
+              justifyContent: 'center',
+            }}
+          >
+            <div className={style['overlay']} id="csc-paywall"></div>
           </div>
         </div>
       </div>
