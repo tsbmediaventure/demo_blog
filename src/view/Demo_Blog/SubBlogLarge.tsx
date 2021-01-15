@@ -12,7 +12,7 @@ const SubBlogLarge = (props: any) => {
     });
   };
   return (
-    <div className={style['large-blog']} key={data.id}>
+    <div className={style['large-blog']} key={data.id} onClick={onClick}>
       <img src={data.img} alt="tvChannels" className={style['cover-img']} />
       <div className={style['overlay']}>
         <div className={style['wrap-content']}>

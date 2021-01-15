@@ -2,13 +2,22 @@ import React, { useEffect, useState } from 'react';
 import Header from './Header';
 import style from './article.module.scss';
 import { Link } from 'react-router-dom';
-import topImg from '../../assets/blog/Story/Humanoid.jpg';
 import smallImg from '../../assets/blog/Story/Roboto.png';
 import { useLocation } from 'react-router-dom';
+import { data as DemoData } from './DemoData';
 
 const Article = () => {
   const location = useLocation();
-  const data = location.state as {id: number,title: string,subTitle: string, name: string,date: string,img: string};
+  let data = location.state as {
+    id: number;
+    title: string;
+    subTitle: string;
+    name: string;
+    date: string;
+    img: string;
+  };
+  if (!data) data = DemoData[0];
+
   const [paid, setPaid] = useState(false);
   useEffect(() => {
     // @ts-ignore
@@ -32,9 +41,7 @@ const Article = () => {
       <Header headerColor="#fff" />
       <div className={style['main']}>
         <p className={style['title']}>{data.title}</p>
-        <p className={style['sub-title']}>
-        {data.subTitle}
-        </p>
+        <p className={style['sub-title']}>{data.subTitle}</p>
         <div className={style['name-date']}>
           <div>
             <p className={style['sub-title']} style={{ color: '#53B2C5' }}>

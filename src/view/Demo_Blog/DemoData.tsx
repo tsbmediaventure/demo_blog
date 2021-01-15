@@ -6,11 +6,12 @@ import trump from '../../assets/blog/trump.jpg';
 import worldWar from '../../assets/blog/world-war-ii.jpg';
 import topImg from '../../assets/blog/Story/Humanoid.jpg';
 import whiskey from '../../assets/blog/Whiskey.jpeg';
+
 export const data = [
   {
     id: 1,
     title: 'The rise of the humanoids, a new era for tech',
-    subTitle:`More and more startups are looking at building AI-enabled humanoids, but it’s too early to know the future of
+    subTitle: `More and more startups are looking at building AI-enabled humanoids, but it’s too early to know the future of
     these machine-enabled beings`,
     name: 'Sunny Sen',
     date: 'January 01,2021',
@@ -71,6 +72,7 @@ export const data = [
     img: worldWar,
   },
   {
+    id: 8,
     title: `Cheers to 'new-age' whisky, spiked with butterscotch, tea and more`,
     subTitle: `Leading brands are hoping to break the old school imagery of whisky in their bid to attract non-conventional whisky drinkers.`,
     name: 'Trisha Mukherjee',

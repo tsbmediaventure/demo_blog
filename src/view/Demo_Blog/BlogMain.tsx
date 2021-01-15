@@ -26,9 +26,9 @@ const Blog = () => {
   const lastBlog = [];
   for (let index = 0; index < data.length; index++) {
     if (index === 0) {
-      fristBlog.push(<FirstBlog passData={data[index]}/>);
+      fristBlog.push(<FirstBlog passData={data[index]} />);
     } else if (index === data.length - 1) {
-      lastBlog.push(<LastBlog passData={data[index]}/>);
+      lastBlog.push(<LastBlog passData={data[index]} />);
     } else {
       if (index % 3 === 0) {
         indents.push(<SubBlogLarge passData={data[index]} />);
