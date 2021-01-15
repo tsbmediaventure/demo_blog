@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from './Header';
 import style from './article.module.scss';
+import { Link } from 'react-router-dom';
 import topImg from '../../assets/blog/Story/Humanoid.jpg';
 import smallImg from '../../assets/blog/Story/Roboto.png';
 import { useLocation } from 'react-router-dom';
@@ -8,6 +9,7 @@ import { useLocation } from 'react-router-dom';
 const Article = () => {
   const location = useLocation();
   const data = location.state as {id: number,title: string,subTitle: string, name: string,date: string,img: string};
+  const [paid, setPaid] = useState(false);
   useEffect(() => {
     // @ts-ignore
     const csc = window._csc as any;
@@ -17,7 +19,8 @@ const Article = () => {
       subscriptionUrl: 'google.com',
       clientId: '5fffcf4b2a2d942cb093ea18',
       successCallback: async (payload: any) => {
-        // Function to show the premium content to the User since they have paid for it via ConsCent
+        setPaid(true);
+        // TODO: perform validation with the conscent backend
       },
       wrappingElementId: 'csc-paywall',
       fullScreenMode: 'false',
@@ -82,15 +85,40 @@ const Article = () => {
             dangerous and/or distant space exploration missions, without having the need to turn back around again and
             return to Earth once the mission is completed.
           </p>
-          {/* TODO: add premium content */}
+          {paid && (
+            <>
+              <p className={style['paragraph']}>
+                In planning and control, the essential difference between humanoids and other kinds of robots (like
+                industrial ones) is that the movement of the robot must be human-like, using legged locomotion,
+                especially biped gait. The ideal planning for humanoid movements during normal walking should result in
+                minimum energy consumption, as it does in the human body. For this reason, studies on dynamics and
+                control of these kinds of structures has become increasingly important.
+              </p>
+              <p className={style['paragraph']}>
+                The question of walking biped robots stabilization on the surface is of great importance. Maintenance of
+                the robot&lsquo;s gravity center over the center of bearing area for providing a stable position can be
+                chosen as a goal of control.
+              </p>
+            </>
+          )}
+          <Link to="/">
+            <p onClick={() => window.scrollTo(0, 0)}>&lt;&lt; Back</p>
+          </Link>
           <div
             style={{
               display: 'flex',
               width: '100%',
               justifyContent: 'center',
+              ...(paid && { width: 0 }),
             }}
           >
-            <div className={style['overlay']} id="csc-paywall"></div>
+            <div
+              className={style['overlay']}
+              id="csc-paywall"
+              style={{
+                ...(paid && { width: 0 }),
+              }}
+            ></div>
           </div>
         </div>
       </div>
