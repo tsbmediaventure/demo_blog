@@ -1,9 +1,19 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import style from './subBlogSmall.module.scss';
 const SubBlogSmall = (props: any) => {
   const data = props.passData;
+  
+  const history = useHistory();
+  const onClick = () => {
+    history.push({
+      pathname: '/article',
+      state: data,
+    });
+  };
+
   return (
-    <div className={style['left-blog']} key={data.id}>
+    <div className={style['left-blog']} key={data.id} onClick={onClick}>
       <img src={data.img} alt="shutterstock" className={style['left-blog-img']} />
       <div className={style['left-blog-text']}>
         <p className={style['left-blog-title']}>{data.title} </p>

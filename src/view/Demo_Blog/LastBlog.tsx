@@ -1,21 +1,26 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import style from './subBlogSmall.module.scss';
-import whiskey from '../../assets/blog/Whiskey.jpeg';
-const LastBlog = () => {
+const LastBlog = (props: any) => {
+  const data = props.passData;
+  const history = useHistory();
+  const onClick = () => {
+    history.push({
+      pathname: '/article',
+      state: data,
+    });
+  };
   return (
-    <div className={style['last-blog']}>
+    <div className={style['last-blog']} key={data.id} onClick={onClick}>
       <div className={style['last-blog-img']}>
-        <img src={whiskey} alt="whiskey" />
+        <img src={data.img} alt="whiskey" />
       </div>
       <div className={style['last-blog-text']}>
-        <p className={style['left-blog-title']}>Cheers to `new-age` whisky, spiked with butterscotch, tea and more</p>
-        <p className={style['left-blog-subtitle']}>
-          Leading brands are hoping to break the old school imagery of whisky in their bid to attract non-conventional
-          whisky drinkers.
-        </p>
+        <p className={style['left-blog-title']}>{data.title}</p>
+        <p className={style['left-blog-subtitle']}>{data.subTitle}</p>
         <div className={style['name-date']}>
-          <p>Trisha Mukherjee</p>
-          <p>January 08, 2021</p>
+          <p>{data.name}</p>
+          <p>{data.date}</p>
         </div>
       </div>
     </div>

@@ -3,8 +3,11 @@ import Header from './Header';
 import style from './article.module.scss';
 import topImg from '../../assets/blog/Story/Humanoid.jpg';
 import smallImg from '../../assets/blog/Story/Roboto.png';
+import { useLocation } from 'react-router-dom';
 
 const Article = () => {
+  const location = useLocation();
+  const data = location.state as {id: number,title: string,subTitle: string, name: string,date: string,img: string};
   useEffect(() => {
     // @ts-ignore
     const csc = window._csc as any;
@@ -25,23 +28,22 @@ const Article = () => {
     <>
       <Header headerColor="#fff" />
       <div className={style['main']}>
-        <p className={style['title']}>The rise of the humanoids, a new era for tech</p>
+        <p className={style['title']}>{data.title}</p>
         <p className={style['sub-title']}>
-          More and more startups are looking at building AI-enabled humanoids, but it’s too early to know the future of
-          these machine-enabled beings
+        {data.subTitle}
         </p>
         <div className={style['name-date']}>
           <div>
             <p className={style['sub-title']} style={{ color: '#53B2C5' }}>
-              Sunny Sen
+              {data.name}
             </p>
-            <p className={style['sub-title']}>January 01,2021</p>
+            <p className={style['sub-title']}>{data.date}</p>
           </div>
           <p className={style['middle-title']}>
             THE <u style={{ textUnderlinePosition: 'under' }}>BIG STORY</u>
           </p>
         </div>
-        <img src={topImg} alt="topImg" className={style['large-img']} />
+        <img src={data.img} alt="topImg" className={style['large-img']} />
         <p className={style['source']}>Source: WikiPedia</p>
         <div className={style['overlay-wrap']}>
           <p className={style['paragraph']}>
