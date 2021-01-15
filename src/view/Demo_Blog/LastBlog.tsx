@@ -5,6 +5,7 @@ const LastBlog = (props: any) => {
   const data = props.passData;
   const history = useHistory();
   const onClick = () => {
+    window.scrollTo(0, 0);
     history.push({
       pathname: '/article',
       state: data,

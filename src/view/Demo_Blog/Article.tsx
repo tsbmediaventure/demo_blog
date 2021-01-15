@@ -24,8 +24,8 @@ const Article = () => {
     const csc = window._csc as any;
     csc('init', {
       debug: true,
-      storyId: '1',
-      subscriptionUrl: 'google.com',
+      storyId: data.id,
+      subscriptionUrl: 'https://github.com/pricing',
       clientId: '5fffcf4b2a2d942cb093ea18',
       successCallback: async (payload: any) => {
         setPaid(true);
