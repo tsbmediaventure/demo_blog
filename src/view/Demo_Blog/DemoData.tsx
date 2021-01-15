@@ -4,10 +4,20 @@ import tvChannels from '../../assets/blog/Data Story/tv-channels-1000.jpg';
 import makeIndia from '../../assets/blog/Make-in-India-Logo.jpg';
 import trump from '../../assets/blog/trump.jpg';
 import worldWar from '../../assets/blog/world-war-ii.jpg';
-
+import topImg from '../../assets/blog/Story/Humanoid.jpg';
+import whiskey from '../../assets/blog/Whiskey.jpeg';
 export const data = [
   {
     id: 1,
+    title: 'The rise of the humanoids, a new era for tech',
+    subTitle:`More and more startups are looking at building AI-enabled humanoids, but it’s too early to know the future of
+    these machine-enabled beings`,
+    name: 'Sunny Sen',
+    date: 'January 01,2021',
+    img: topImg,
+  },
+  {
+    id: 2,
     title: 'World’s big tech companies are hiring more women developers',
     subTitle:
       'There has been a gradual increase in number of women developers in large tech companies to create gender-balanced tech teams',
@@ -16,7 +26,7 @@ export const data = [
     img: shutterstock,
   },
   {
-    id: 2,
+    id: 3,
     title: 'How World War II changed the job landscape forever',
     subTitle:
       'With mass migration between countries, more people looked for opportunities far away from their home countries, giving rise to a new breed of  extremely hungry job seekers',
@@ -25,7 +35,7 @@ export const data = [
     img: durin,
   },
   {
-    id: 3,
+    id: 4,
     title: 'Where have paid subscriptions on TV diminished?',
     subTitle:
       'As India gets more digital, television viewing minutes reduced by 5 per cent in 2019. Thanks to the burgeoning of OTT platforms.',
@@ -60,11 +70,11 @@ export const data = [
     date: 'January 02, 2021',
     img: worldWar,
   },
-  // {
-  //   title: `Cheers to 'new-age' whisky, spiked with butterscotch, tea and more`,
-  //   subTitle: `Leading brands are hoping to break the old school imagery of whisky in their bid to attract non-conventional whisky drinkers.`,
-  //   name: 'Trisha Mukherjee',
-  //   date: 'January 08, 2021',
-  //   img: whiskey,
-  // },
+  {
+    title: `Cheers to 'new-age' whisky, spiked with butterscotch, tea and more`,
+    subTitle: `Leading brands are hoping to break the old school imagery of whisky in their bid to attract non-conventional whisky drinkers.`,
+    name: 'Trisha Mukherjee',
+    date: 'January 08, 2021',
+    img: whiskey,
+  },
 ];
