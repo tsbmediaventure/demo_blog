@@ -32,10 +32,7 @@ const Article = () => {
       subscriptionUrl: 'https://github.com/pricing', // example url, add your subscription url here
       clientId: clientId, // your clientID here
       successCallback: async (validationObject: any) => {
-        console.log('Successcallback was called', validationObject);
-        // console.log('client success callback called', payload);
         /**
-         *
          * example validationObject structure:
         {
             message: 'Story Read Confirmed',
@@ -69,15 +66,16 @@ const Article = () => {
             "readId": "2fe99e81-52a8-4fd2-8b89-0e3b561b4da1"
           }
          */
-        console.log('Validation starting', confirmationPayload);
+        // Validation starting
         if (
           backendConfirmationResponse.data.readId === validationObject.readId &&
           clientId === confirmationPayload.clientId &&
           storyId === confirmationPayload.storyId
         ) {
-          console.log('Validation successful', confirmationPayload);
+          // Validation successful
           setPaid(true); // DO all the actions you need to do to show the user the story here
         } else {
+          // Validation failed
           console.error('Invalid authentication, story will not be shown');
           // To handle this case you might want to redirect the user to your subscription page instead with a payment failed error.
         }
