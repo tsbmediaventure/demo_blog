@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import Header from './Header';
 import style from './article.module.scss';
 import { Link } from 'react-router-dom';
@@ -17,24 +18,74 @@ const Article = () => {
     img: string;
   };
   if (!data) data = DemoData[0];
-
   const [paid, setPaid] = useState(false);
+  const API_URL = 'https://sandbox-api.conscent.in/api/v1';
+
+  const clientId = '5fffcf4b2a2d942cb093ea18';
+  const storyId = data.id.toString();
   useEffect(() => {
     // @ts-ignore
     const csc = window._csc as any;
     csc('init', {
       debug: true,
-      storyId: data.id,
-      subscriptionUrl: 'https://github.com/pricing',
-      clientId: '5fffcf4b2a2d942cb093ea18',
-      successCallback: async (payload: any) => {
-        setPaid(true);
-        // TODO: perform validation with the conscent backend
+      storyId: data.id, // your story id here
+      subscriptionUrl: 'https://github.com/pricing', // example url, add your subscription url here
+      clientId: clientId, // your clientID here
+      successCallback: async (validationObject: any) => {
+        console.log('Successcallback was called', validationObject);
+        // console.log('client success callback called', payload);
+        /**
+         *
+         * example validationObject structure:
+        {
+            message: 'Story Read Confirmed',
+            payload: {
+              clientId: '5fffcf4b2a2d942cb093ea18',
+              storyId: '3',
+              transactionAmount: 3,
+              createdAt: '2021-01-18T05:34:12.658Z',
+            },
+            readId: '7c873f32-e16b-4a94-a51c-7e873ff0fb15',
+        }
+         */
+        // If possible, the following validation should be done by your backend server to avoid all tampering by the user
+        // For this, you must pass only the readId from your frontend to your backend.
+        // This example will continue validation in the frontend --
+        // The following API call is valid only ONCE. Further calls will return 401 (unauthorized) because every readId is a one-time access provided to the user.
+        const backendConfirmationResponse = await axios.post(`${API_URL}/story/read/${validationObject.readId}`);
+        const confirmationPayload = backendConfirmationResponse.data.payload;
+
+        /**
+         *
+         * Confirmation Payload structure:
+         {
+            "message": "Story Read Confirmed",
+            "payload": {
+              "clientId": "5fffcf4b2a2d942cb093ea18",
+              "storyId": "3",
+              "transactionAmount": 0,
+              "createdAt": "2021-01-18T05:48:00.340Z"
+            },
+            "readId": "2fe99e81-52a8-4fd2-8b89-0e3b561b4da1"
+          }
+         */
+        console.log('Validation starting', confirmationPayload);
+        if (
+          backendConfirmationResponse.data.readId === validationObject.readId &&
+          clientId === confirmationPayload.clientId &&
+          storyId === confirmationPayload.storyId
+        ) {
+          console.log('Validation successful', confirmationPayload);
+          setPaid(true); // DO all the actions you need to do to show the user the story here
+        } else {
+          console.error('Invalid authentication, story will not be shown');
+          // To handle this case you might want to redirect the user to your subscription page instead with a payment failed error.
+        }
       },
       wrappingElementId: 'csc-paywall',
       fullScreenMode: 'false',
     });
-  });
+  }, []);
 
   return (
     <>

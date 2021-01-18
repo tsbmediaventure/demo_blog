@@ -26,14 +26,14 @@ const Blog = () => {
   const lastBlog = [];
   for (let index = 0; index < data.length; index++) {
     if (index === 0) {
-      fristBlog.push(<FirstBlog passData={data[index]} />);
+      fristBlog.push(<FirstBlog passData={data[index]} key={index} />);
     } else if (index === data.length - 1) {
-      lastBlog.push(<LastBlog passData={data[index]} />);
+      lastBlog.push(<LastBlog passData={data[index]} key={index} />);
     } else {
       if (index % 3 === 0) {
-        indents.push(<SubBlogLarge passData={data[index]} />);
+        indents.push(<SubBlogLarge passData={data[index]} key={index} />);
       } else {
-        indents.push(<SubBlogSmall passData={data[index]} />);
+        indents.push(<SubBlogSmall passData={data[index]} key={index} />);
       }
     }
   }
