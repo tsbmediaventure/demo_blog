@@ -73,6 +73,22 @@
   max-width: 95%;
   width: 750px;
 }
+.blur-text-seven {
+  text-shadow: 0 0 7px black;
+  color: transparent;
+}
+.blur-text-eight {
+  text-shadow: 0 0 8px black;
+  color: transparent;
+}
+.blur-text-nine {
+  text-shadow: 0 0 9px black;
+  color: transparent;
+}
+.blur-text-ten {
+  text-shadow: 0 0 10px black;
+  color: transparent;
+}
 @media (max-width: 768px) {
   .main {
     width: 90%;
@@ -93,5 +109,8 @@
   }
   .overlay-content {
     width: 300px;
+  }
+  .large-img {
+    height: 330px;
   }
 }
