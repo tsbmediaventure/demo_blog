@@ -110,17 +110,21 @@ const Article = () => {
             Humanoid robots are now used as research tools in several scientific areas. Researchers study the human body
             structure and behavior (biomechanics) to build humanoid robots. On the other side, the attempt to simulate
             the human body leads to a better understanding of it. Human cognition is a field of study which is focused
-            on how humans learn from sensory information in order to acquire perceptual and motor skills. This knowledge
-            is used to develop computational models of human behavior and it has been improving over time. <br />
-            <br />
-            It has been suggested that very advanced robotics will facilitate the enhancement of ordinary humans. See
-            transhumanism. <br />
-            <br />
-            Although the initial aim of humanoid research was to build better orthosis and prosthesis for human beings,
-            knowledge has been transferred between both disciplines. A few examples are powered leg prosthesis for
-            neuromuscularly impaired, ankle-foot orthosis, biological realistic leg prosthesis and forearm prosthesis.
+            on how humans learn from sensory information in order to acquire perceptual and motor skills. T
+            <span className={paid ? style['paragraph'] : style['blur-text-seven']}>
+              his knowledge is used to develop computational models of human behavior and it has been improving over
+              time. <br />
+              <br />
+              It has been suggested that very advanced robotics will facilitate the enhancement of ordinary humans. See
+              transhumanism. <br />
+              <br />
+              Although the initial aim of humanoid research was to build better orthosis and prosthesis for human
+              beings, knowledge has been transferred between both disciplines. A few examples are powered leg prosthesis
+              for neuromuscularly impaired, ankle-foot orthosis, biological realistic leg prosthesis and forearm
+              prosthesis.
+            </span>
           </p>
-          <p className={style['paragraph']}>
+          <p className={paid ? style['paragraph'] : style['blur-text-eight']}>
             Besides the research, humanoid robots are being developed to perform human tasks like personal assistance,
             through which they should be able to assist the sick and elderly, and dirty or dangerous jobs. Humanoids are
             also suitable for some procedurally-based vocations, such as reception-desk administrators and automotive
@@ -128,7 +132,7 @@ const Article = () => {
             for the human form, humanoids could theoretically perform any task a human being can, so long as they have
             the proper software. However, the complexity of doing so is immense.
           </p>
-          <p className={style['paragraph']}>
+          <p className={paid ? style['paragraph'] : style['blur-text-nine']}>
             They are also becoming increasingly popular as entertainers. For example, Ursula, a female robot, sings,
             plays music, dances and speaks to her audiences at Universal Studios. Several Disney theme park shows
             utilize animatronic robots that look, move and speak much like human beings. Although these robots look
@@ -136,27 +140,11 @@ const Article = () => {
             applications in daily life are featured in an independent documentary film called Plug &amp; Pray, which was
             released in 2010.
           </p>
-          <p className={style['paragraph']}>
+          <p className={paid ? style['paragraph'] : style['blur-text-ten']}>
             Humanoid robots, especially those with artificial intelligence algorithms, could be useful for future
             dangerous and/or distant space exploration missions, without having the need to turn back around again and
             return to Earth once the mission is completed.
           </p>
-          {paid && (
-            <>
-              <p className={style['paragraph']}>
-                In planning and control, the essential difference between humanoids and other kinds of robots (like
-                industrial ones) is that the movement of the robot must be human-like, using legged locomotion,
-                especially biped gait. The ideal planning for humanoid movements during normal walking should result in
-                minimum energy consumption, as it does in the human body. For this reason, studies on dynamics and
-                control of these kinds of structures has become increasingly important.
-              </p>
-              <p className={style['paragraph']}>
-                The question of walking biped robots stabilization on the surface is of great importance. Maintenance of
-                the robot&lsquo;s gravity center over the center of bearing area for providing a stable position can be
-                chosen as a goal of control.
-              </p>
-            </>
-          )}
           <Link to="/">
             <p onClick={() => window.scrollTo(0, 0)}>&lt;&lt; Back</p>
           </Link>
