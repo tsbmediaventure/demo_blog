@@ -23,7 +23,7 @@
     -->
     <title>ConsCent Blog</title>
     <script>
-      const clientId = '5fffcf4b2a2d942cb093ea18';
+      const clientId = '%REACT_APP_CLIENT_ID%';
       (function (w, d, s, o, f, cid) {
         if (!w[o]) {
           w[o] = function () {
@@ -37,7 +37,7 @@
         js.async = 1;
         js.title = cid;
         fjs.parentNode.insertBefore(js, fjs);
-      })(window, document, 'script', '_csc', 'https://sandbox-sdk.conscent.in', clientId);
+      })(window, document, 'script', '_csc', '%REACT_APP_SDK_URL%', clientId);
     </script>
   </head>
   <body>

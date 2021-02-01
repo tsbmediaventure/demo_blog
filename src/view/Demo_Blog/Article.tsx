@@ -19,9 +19,9 @@ const Article = () => {
   };
   if (!data) data = DemoData[0];
   const [paid, setPaid] = useState(false);
-  const API_URL = 'https://sandbox-api.conscent.in/api/v1';
+  const API_URL = process.env.REACT_APP_API_URL;
 
-  const clientId = '5fffcf4b2a2d942cb093ea18';
+  const clientId = process.env.REACT_APP_CLIENT_ID;
   const storyId = data.id.toString();
   useEffect(() => {
     // @ts-ignore
