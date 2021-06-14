@@ -32,6 +32,8 @@ const Article = () => {
       subscriptionUrl: 'https://github.com/pricing', // example url, add your subscription url here
       clientId: clientId, // your clientID here
       screenType: 'beta',
+      signInUrl: 'https://github.com',
+      accentColor: 'red',
       successCallback: async (validationObject: any) => {
         /**
          * example validationObject structure:
