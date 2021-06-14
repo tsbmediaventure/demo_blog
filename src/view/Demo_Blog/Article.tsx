@@ -31,6 +31,7 @@ const Article = () => {
       storyId: data.id, // your story id here
       subscriptionUrl: 'https://github.com/pricing', // example url, add your subscription url here
       clientId: clientId, // your clientID here
+      screenType: 'beta',
       successCallback: async (validationObject: any) => {
         /**
          * example validationObject structure:
