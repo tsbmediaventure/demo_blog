@@ -52,7 +52,9 @@ const Article = () => {
         // For this, you must pass only the readId from your frontend to your backend.
         // This example will continue validation in the frontend --
         // The following API call is valid only ONCE. Further calls will return 401 (unauthorized) because every readId is a one-time access provided to the user.
-        const backendConfirmationResponse = await axios.post(`${API_URL}/story/read/${validationObject.readId}`);
+        const backendConfirmationResponse = await axios.post(
+          `${API_URL}/content/consumption/${validationObject.readId}`,
+        );
         const confirmationPayload = backendConfirmationResponse.data.payload;
 
         /**
@@ -71,9 +73,9 @@ const Article = () => {
          */
         // Validation starting
         if (
-          backendConfirmationResponse.data.readId === validationObject.readId &&
+          backendConfirmationResponse.data.consumptionId === validationObject.consumptionId &&
           clientId === confirmationPayload.clientId &&
-          storyId === confirmationPayload.storyId
+          storyId === confirmationPayload.contentId
         ) {
           // Validation successful
           setPaid(true); // DO all the actions you need to do to show the user the story here
