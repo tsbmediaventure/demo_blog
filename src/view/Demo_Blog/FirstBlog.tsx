@@ -8,7 +8,7 @@ const FirstBlog = (props: any) => {
   const onClick = () => {
     window.scrollTo(0, 0);
     history.push({
-      pathname: '/article',
+      pathname: `/${data.id}`,
       state: data,
     });
   };

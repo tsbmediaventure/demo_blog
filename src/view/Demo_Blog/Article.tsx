@@ -2,14 +2,13 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Header from './Header';
 import style from './article.module.scss';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import smallImg from '../../assets/blog/Story/Roboto.png';
-import { useLocation } from 'react-router-dom';
 import { data as DemoData } from './DemoData';
 
 const Article = () => {
-  const location = useLocation();
-  let data = location.state as {
+  const { articleId } = useParams() as { articleId: string };
+  const data = DemoData[parseInt(articleId) - 1] as {
     id: number;
     title: string;
     subTitle: string;
@@ -17,7 +16,6 @@ const Article = () => {
     date: string;
     img: string;
   };
-  if (!data) data = DemoData[0];
   const [paid, setPaid] = useState(false);
   const API_URL = process.env.REACT_APP_API_URL;
 
