@@ -24,6 +24,16 @@ const Article = () => {
   useEffect(() => {
     // @ts-ignore
     const csc = window._csc as any;
+    csc('google-one-tap', {
+      clientId,
+      contentId: data.id,
+      successFullLoggedIn: (data: any) => {
+        console.log(data, 'loggedinh banda');
+      },
+      oneTapArgs: (data: any) => {
+        console.log(data, 'recieved in googleonetap login');
+      },
+    });
     csc('init', {
       debug: true,
       storyId: data.id, // your story id here
